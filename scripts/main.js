@@ -42,6 +42,21 @@ $('a.smooth-scroll')
   }
 });
 
+  const startDate = new Date(2020, 7, 18); // August 24, 2020
+  const today = new Date();
+
+  let years = today.getFullYear() - startDate.getFullYear();
+
+  if (
+    today.getMonth() < startDate.getMonth() ||
+    (today.getMonth() === startDate.getMonth() &&
+     today.getDate() < startDate.getDate())
+  ) {
+    years--;
+  }
+
+  document.getElementById("experience-years").textContent = years;
+
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
